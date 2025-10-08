@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Watchmen Bureau — Private Investigators</title>
+  <meta name="description" content="The Watchmen Bureau — Discreet and professional private investigators. Schedule a consultation today." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --panel:#111214;
+      --accent:#c9b091;
+      --muted:#9b9b9b;
+      --glass: rgba(255,255,255,0.03);
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: url('https://images.unsplash.com/photo-1507149833265-60c372daea22?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat fixed;
+      background-color: var(--bg);
+      color:#e9e9e9;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:60px;
+    }
+
+    /* overlay to darken the background image */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: -1;
+    }
+
+    .grain{position:fixed;inset:0;pointer-events:none;mix-blend-mode:overlay;opacity:0.08;background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>');}
+
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px;}
+
+    header{padding:36px 0;position:relative}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(180deg,#1a1a1a,#0f0f0f);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.04);box-shadow:0 4px 18px rgba(0,0,0,0.6)}
+    .logo svg{width:34px;height:34px;opacity:0.95}
+    h1.site-title{font-family: 'Libre Baskerville', serif;margin:0;font-size:20px;letter-spacing:1px}
+
+    nav{margin-left:auto}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:14px}
+    .nav-links a:hover{color:var(--accent)}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:48px 0 64px;}
+    .hero-left{padding-right:12px}
+    .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:2px;font-size:12px;margin-bottom:10px}
+    .hero-title{font-family: 'Libre Baskerville', serif;font-size:44px;margin:0 0 12px;color:#f5f3f0;line-height:1.02;text-shadow:0 2px 8px rgba(0,0,0,0.5)}
+    .hero-sub{color:var(--muted);margin-bottom:18px;text-shadow:0 1px 4px rgba(0,0,0,0.5)}
+    .cta{display:inline-block;background:transparent;border:1px solid rgba(201,176,145,0.18);padding:10px 16px;border-radius:8px;color:var(--accent);text-decoration:none;font-weight:600}
+    .cta:hover{background:rgba(201,176,145,0.04)}
+
+    .hero-card{background:rgba(17,18,20,0.85);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px)}
+    .hero-card h3{margin:0 0 8px;font-size:18px}
+    .hero-card p{margin:0 0 12px;color:var(--muted);font-size:14px}
+
+    .services{display:flex;gap:18px;margin:40px 0}
+    .service{flex:1;background:rgba(17,18,20,0.75);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);backdrop-filter:blur(4px)}
+    .service h4{margin:0 0 8px;font-size:16px}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+
+    .about{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start;margin:28px 0}
+    .about-card{background:rgba(17,18,20,0.8);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(4px)}
+
+    blockquote{margin:0;background:rgba(17,18,20,0.8);padding:18px;border-radius:10px;border-left:4px solid rgba(201,176,145,0.12);color:var(--muted);backdrop-filter:blur(4px)}
+
+    form{display:flex;flex-direction:column;gap:10px}
+    input[type=text], input[type=email], textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:#fff;font-size:14px}
+    input::placeholder, textarea::placeholder{color:rgba(255,255,255,0.35)}
+    button[type=submit]{padding:12px 14px;border-radius:8px;border:0;background:var(--accent);color:#111;font-weight:700;cursor:pointer}
+    button[type=submit]:hover{filter:brightness(0.95)}
+
+    footer{margin-top:40px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);font-size:13px;background:rgba(0,0,0,0.5);backdrop-filter:blur(2px)}
+
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}.about{grid-template-columns:1fr}.services{flex-direction:column}.nav-links{display:none}}
+
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="container">
+    <header style="display:flex;align-items:center;gap:18px">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="white" stroke-opacity="0.12" stroke-width="1.2"/><path d="M6 12s2.5-5 6-5 6 5 6 5-2.5 5-6 5-6-5-6-5z" fill="rgba(255,255,255,0.02)"/><circle cx="12" cy="12" r="2.2" fill="rgba(201,176,145,0.9)"/></svg>
+        </div>
+        <div>
+          <h1 class="site-title">The Watchmen Bureau</h1>
+          <div class="muted" style="font-size:12px">Private Investigators — Discretion & Professionalism</div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#reference">Reference</a>
+          <a href="#contact" class="cta">Book a Meeting</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="kicker">Discreet. Efficient. Secure.</div>
+          <h2 class="hero-title">We see what others miss.</h2>
+          <p class="hero-sub">The Watchmen Bureau is an experienced private investigation agency offering discreet investigations for individuals and businesses. We combine traditional methods with modern technology to deliver reliable results.</p>
+          <p><a href="#contact" class="cta">Book a Meeting</a></p>
+
+          <div class="services" style="margin-top:22px">
+            <div class="service">
+              <h4>Background Checks</h4>
+              <p>Thorough investigation of an individual's background, customized to your needs.</p>
+            </div>
+            <div class="service">
+              <h4>Infidelity Investigations</h4>
+              <p>Discreet surveillance and documentation suitable for private cases.</p>
+            </div>
+            <div class="service"class>
+               <h4>Nota simple search</h4>
+              <p>We find anyone who is owning property in Spain.</p>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Quick Contact</h3>
+          <p class="muted">Fill in the form below and we will get back to you shortly. All correspondence is treated confidentially.</p>
+
+          <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+            <label class="muted" style="font-size:12px">Name</label>
+            <input type="text" name="name" placeholder="Full Name" required />
+
+            <label class="muted" style="font-size:12px">Email</label>
+            <input type="email" name="email" placeholder="you@example.com" required />
+
+            <label class="muted" style="font-size:12px">Message</label>
+            <textarea name="message" rows="4" placeholder="Brief description of your case" required></textarea>
+
+            <input type="hidden" name="_subject" value="New inquiry from website" />
+            <button type="submit">Send Request</button>
+            <div id="formStatus" class="muted" style="margin-top:8px;font-size:13px;display:none"></div>
+          </form>
+
+          <script>
+            (function(){
+              const form = document.getElementById('contactForm');
+              const status = document.getElementById('formStatus');
+              form.addEventListener('submit', function(){
+                status.style.display = 'block';
+                status.textContent = 'Sending...';
+                setTimeout(()=>{ status.textContent = 'Thank you! We will contact you shortly.'; }, 900);
+              });
+            })();
+          </script>
+        </aside>
+      </section>
+
+      <section id="about" class="about">
+        <div class="about-card">
+          <h3>About Us</h3>
+          <p class="muted">The Watchmen Bureau was founded by investigators with backgrounds in security and field operations. We value integrity, precision, and legal compliance in every assignment.</p>
+
+          <h4 style="margin-top:16px">Our Values</h4>
+          <ul style="padding-left:18px;margin:6px 0;color:var(--muted)">
+            <li>Discretion</li>
+            <li>Transparency in method and cost</li>
+            <li>Ethics and legality</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="margin:0 0 10px">Reference</h4>
+          <blockquote>
+            “The Watchmen Bureau solved a complex case for us with utmost discretion. The results were clear, professional, and delivered on time.”
+            <div style="margin-top:8px;font-size:13px;color:var(--muted)">— Anonymous Client</div>
+          </blockquote>
+
+          <div style="margin-top:16px;font-size:13px;color:var(--muted)">
+            <strong>Note:</strong> Client names are only shown with permission to protect confidentiality.
+          </div>
+        </div>
+      </section>
+
+      <section id="services" style="margin-top:18px">
+        <div class="about-card">
+          <h3>Services</h3>
+          <p class="muted">We offer customized investigative services. Below are a few examples — contact us for a free initial consultation.</p>
+          <ul style="padding-left:18px;color:var(--muted)">
+            <li>Background checks and personnel screening</li>
+            <li>Surveillance and documentation</li>
+            <li>Infidelity investigations</li>
+            <li>Photographic evidence</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:28px">
+        <div class="about-card">
+          <h3>Contact</h3>
+          <p class="muted">Use the form above or send an email to <strong>watchmenbureau@gmail.com</strong></p>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+            <div style="background:rgba(17,18,20,0.8);padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)">
+              <div style="font-size:13px;color:var(--muted)">Phone</div>
+              <div style="font-weight:700">+34 604495713</div>
+            </div>
+
+            <div style="background:rgba(17,18,20,0.8);padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)">
+              <div style="font-size:13px;color:var(--muted)">Business Hours</div>
+              <div style="font-weight:700">Mon–Fri 09:00–18:00</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <div>© 2025 The Watchmen Bureau — All rights reserved</div>
+        <div style="color:var(--muted);font-size:13px">Design: film-noir, discreet & mobile-friendly</div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
